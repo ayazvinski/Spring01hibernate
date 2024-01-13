@@ -1,0 +1,7 @@
+###
+POST http://localhost:8080/Spring01hibernate/book/create?title=potop&rating=8&description=dobre
+
+###
+POST http://localhost:8080/Spring01hibernate/book/edit/1?title=esited&rating=5&description=super
+
+###
