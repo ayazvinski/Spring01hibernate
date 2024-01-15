@@ -5,3 +5,6 @@ POST http://localhost:8080/Spring01hibernate/book/create?title=potop&rating=8&de
 POST http://localhost:8080/Spring01hibernate/book/edit/1?title=esited&rating=5&description=super
 
 ###
+
+GET http://localhost:8080/Spring01hibernate/book/all
+###

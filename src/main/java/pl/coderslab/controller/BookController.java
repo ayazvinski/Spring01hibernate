@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.*;
 import pl.coderslab.dao.BookDao;
 import pl.coderslab.entity.Book;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/book")
 public class BookController {
@@ -44,5 +46,12 @@ public class BookController {
     public String getById(@PathVariable long id) {
         Book book = bookDao.findById(id);
         return book.toString(); // todo handle book NOT found exception
+    }
+
+    @RequestMapping("/all")
+    @ResponseBody
+    public String findAll() {
+        List<Book> all = bookDao.findAll();
+        return all.toString();
     }
 }
