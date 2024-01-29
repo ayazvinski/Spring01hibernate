@@ -2,7 +2,7 @@ package pl.coderslab.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import pl.coderslab.dao.BookDao;
+import pl.coderslab.repository.BookDao;
 import pl.coderslab.entity.Book;
 
 import java.util.List;

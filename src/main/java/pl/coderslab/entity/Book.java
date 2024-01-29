@@ -1,6 +1,10 @@
 package pl.coderslab.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "books")
@@ -8,8 +12,12 @@ public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotBlank
     private String title;
+    @Min(0)
+    @Max(10)
     private int rating;
+    @Size(max = 512)
     private String description;
 
     public Book() {
