@@ -19,3 +19,11 @@ GET http://localhost:8080/Spring01hibernate/author/find/2
 ###
 POST http://localhost:8080/Spring01hibernate/author/delete/1
 ###
+POST http://localhost:8080/Spring01hibernate/publisher/create?name=Warsaw2025
+###
+GET http://localhost:8080/Spring01hibernate/publisher/all
+###
+POST http://localhost:8080/Spring01hibernate/publisher/edit/1?name=Warsaw2023
+###
+POST http://localhost:8080/Spring01hibernate/publisher/delete/3
+###
