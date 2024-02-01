@@ -18,9 +18,8 @@ public class AuthorController {
 
     @PostMapping("/create")
     @ResponseBody
-    public String createAuthor(@RequestParam String firstName,
-                             @RequestParam String lastName) {
-        Author a = new Author(firstName,lastName);
+    public String createAuthor(@RequestParam String name) {
+        Author a = new Author(name);
         a= authorDao.create(a);
         return a.toString();
     }
@@ -28,11 +27,9 @@ public class AuthorController {
     @PostMapping("/edit/{id}")
     @ResponseBody
     public String editAuthor(@PathVariable long id,
-                             @RequestParam String firstName,
-                             @RequestParam String lastName){
+                             @RequestParam String name){
         Author author = authorDao.findById(id);
-        author.setFirstName(firstName);
-        author.setLastName(lastName);
+        author.setName(name);
         authorDao.edit(author);
         return author.toString();
     }
