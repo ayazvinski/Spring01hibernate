@@ -20,20 +20,26 @@ public class BookDao {
         return book;
     }
 
-    public void edit(Book book){
-         entityManager.merge(book);
+    public void edit(Book book) {
+        entityManager.merge(book);
     }
 
     public Book findById(long id) {
         return entityManager.find(Book.class, id);
     }
 
-    public void delete(Book book){
-        entityManager.remove(entityManager.contains(book) ? book: entityManager.merge(book));
+    public void delete(Book book) {
+        entityManager.remove(entityManager.contains(book) ? book : entityManager.merge(book));
     }
 
-    public List<Book> findAll(){
+    public List<Book> findAll() {
         Query query = entityManager.createQuery("SELECT b FROM Book b");
+        return query.getResultList();
+    }
+
+    public List<Book> findAllByRating(int rating) {
+        Query query = entityManager.createQuery("SELECT b FROM Book b WHERE b.rating=:rating");
+        query.setParameter("rating",rating);
         return query.getResultList();
     }
 }
