@@ -11,12 +11,14 @@ public class Person {
     private String login;
     private String password;
     private String email;
+    @OneToOne
+    @JoinColumn(name="details_id",unique = true)
+    private PersonDetails personDetails;
 
     public Person() {
     }
 
-    public Person(Long id, String login, String password, String email) {
-        this.id = id;
+    public Person(String login, String password, String email) {
         this.login = login;
         this.password = password;
         this.email = email;
