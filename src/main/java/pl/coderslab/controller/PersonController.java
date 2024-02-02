@@ -1,6 +1,7 @@
 package pl.coderslab.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import pl.coderslab.entity.Person;
 import pl.coderslab.repository.PersonDao;
@@ -11,6 +12,33 @@ public class PersonController {
     private PersonDao personDao;
     public PersonController(PersonDao personDao) {
         this.personDao = personDao;
+    }
+    @GetMapping("/addForm")
+    public String addForm() {
+        return "addForm";
+    }
+    @PostMapping("/addForm")
+    @ResponseBody
+    public String postAddForm(
+            @RequestParam String login,
+            @RequestParam String password,
+            @RequestParam String email
+    ) {
+        Person person = new Person(login, password, email);
+        personDao.create(person);
+        return person.toString();
+    }
+    @GetMapping("/addFormBind")
+    public String addFormBind(Model m) {
+        m.addAttribute("person", new Person());
+        return "/addFormBinding";
+    }
+
+    @PostMapping("/addFormBind")
+    @ResponseBody
+    public String postAddFormBind(@ModelAttribute Person person) {
+        personDao.create(person);
+        return person.toString();
     }
 
     @PostMapping("/create")

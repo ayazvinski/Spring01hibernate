@@ -29,3 +29,5 @@ POST http://localhost:8080/Spring01hibernate/publisher/delete/3
 ###
 POST http://localhost:8080/Spring01hibernate/person/create?login=username&password=password1&email=username@email.test
 ###
+GET http://localhost:8080/Spring01hibernate/person/2
+###
