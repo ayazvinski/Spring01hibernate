@@ -17,7 +17,7 @@ public class Book {
     private int rating;
     @Size(max = 512)
     private String description;
-    @OneToOne
+    @ManyToOne
     @NotNull
     private Publisher publisher;
     @ManyToMany

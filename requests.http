@@ -9,7 +9,7 @@ POST http://localhost:8080/Spring01hibernate/book/edit/1?title=esited&rating=5&d
 GET http://localhost:8080/Spring01hibernate/book/all
 ###
 
-POST http://localhost:8080/Spring01hibernate/author/create?firstName=Adam&lastName=Nowak
+POST http://localhost:8080/Spring01hibernate/author/create?name=Adam Mickiewicz
 ###
 POST http://localhost:8080/Spring01hibernate/author/create?firstName=Kasia&lastName=Kowalska
 ###

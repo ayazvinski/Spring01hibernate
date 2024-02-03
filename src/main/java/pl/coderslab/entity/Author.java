@@ -10,7 +10,7 @@ public class Author {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    @ManyToMany(mappedBy = "authors")
+    @ManyToMany(mappedBy = "authors", fetch = FetchType.EAGER)
     private List<Book> books;
 
     public Author() {
